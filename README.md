@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Connect 4
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Simple Sudoku app made in React JS.
+Instructions included.
+
+## Frameworks & Libraries Used
+
+<ol>
+	<li>React JS</li>
+	<li>Bootstrap CSS</li>
+</ol>
+
+## Screenshot
+
+![Connect 4](https://i.ibb.co/8X8vznc/connect4.png)
 
 ## Available Scripts
 
