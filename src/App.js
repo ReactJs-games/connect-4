@@ -10,6 +10,7 @@ export default function App() {
 	const [ resultModal, setResultModal ] = useState(null)
 	useEffect(() => {
 		setResultModal(new bootstrap.Modal(document.getElementById('resultModal'), { keyboard: false, backdrop: 'static' }))
+		new bootstrap.Popover(document.querySelector('[data-bs-toggle="popover"]'), { container: 'body', html: true })
 	}, [])
 	const restart = () => window.location.reload()
 	const handleMouseEnter = (e) => {
@@ -27,11 +28,16 @@ export default function App() {
 		if(position !== false) {
 			_board[position] = turn === "Blue" ? "Blue" : "Red"
 			setBoard(_board)
-			if(checkWin(position)) {
-				resultModal.show()
-			}
-			else {
-				setTurn(_turn => turn === "Blue" ? "Red" : "Blue")
+			const result = checkWin(position)
+			switch(result) {
+				case 1:
+					resultModal.show()
+					break
+				case 2:
+					restart()
+					break
+				default:
+					setTurn(_turn => turn === "Blue" ? "Red" : "Blue")
 			}
 		}
 	}
@@ -47,6 +53,7 @@ export default function App() {
 		return false
 	}
 	const checkWin = (current) => {
+		if(!board.includes("")) return 2							// If board is fully filled
 		const column = current % 7
 		const row = (current - column) / 7
 		let nw = Math.min(column, row)
@@ -55,7 +62,7 @@ export default function App() {
 		// Horizontal
 		for(let temp_column = 0; temp_column < 7; ++temp_column) {
 			if(board[row*7 + temp_column] === turn) {
-				if(++count > 2) return true
+				if(++count > 2) return 1
 			}
 			else {
 				count = 0
@@ -65,7 +72,7 @@ export default function App() {
 		// Vertical
 		for(let temp_row = 0; temp_row < 6; ++temp_row) {
 			if(board[temp_row*7 + column] === turn) {
-				if(++count > 2) return true
+				if(++count > 2) return 1
 			}
 			else {
 				count = 0
@@ -75,7 +82,7 @@ export default function App() {
 		// L2R Diagonal
 		for(let temp_row = row - nw, temp_column = column - nw; temp_row < 5 || temp_column < 6; ++temp_row, ++temp_column) {
 			if(board[temp_row*7 + temp_column] === turn) {
-				if(++count > 2) return true
+				if(++count > 2) return 1
 			}
 			else {
 				count = 0
@@ -85,14 +92,14 @@ export default function App() {
 		// R2l Diagonal
 		for(let temp_row = row - ne, temp_column = column + ne; temp_row < 5 || temp_column > 0; ++temp_row, --temp_column) {
 			if(board[temp_row*7 + temp_column] === turn) {
-				if(++count > 2) return true
+				if(++count > 2) return 1
 			}
 			else {
 				count = 0
 			}
 		}
 		count = 0
-		return false
+		return 0
 	}
 	return(
 		<main>
@@ -103,7 +110,9 @@ export default function App() {
 							<h3 className="modal-title" id="resultModalLabel">Game Over</h3>
 						</div>
 						<div className="modal-body">
-							<h5><span className={turn === "Blue" ? "text-primary" : "text-danger"}>{turn}</span> has won the game!</h5>
+							<h5>
+								<span className={turn === "Blue" ? "text-primary" : "text-danger"}>{turn}</span> has won the game!
+							</h5>
 						</div>
 						<div className="modal-footer">
 							<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -113,7 +122,18 @@ export default function App() {
 				</div>
 			</div>
 			<div className="card shadow-lg text-center p-3">
-				<h1 className={turn === "Blue" ? "text-primary" : "text-danger"}>Connect 4</h1>
+				<div className="d-flex justify-content-between">
+					<h1 className={turn === "Blue" ? "text-primary" : "text-danger"}>Connect 4</h1>
+					<button type="button" className="btn btn-warning fs-5" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom"
+						data-bs-content="<ul>
+							<li>First, decide who goes first and what color each player will have.</li>
+							<li>Players must alternate turns, and only one disc can be dropped in each turn.</li>
+							<li>On your turn, drop one of your colored discs from the top into any of the seven slots.</li>
+							<li>The game ends when there are 4 of the same colored discs in a row (either vertically, horizontally, or diagonally) or a stalemate.</li>
+							<li>The starter of the previous game goes second on the next game.</li>
+						</ul>"
+					>Instructions</button>
+				</div>
 				<table className="table bg-secondary m-0">
 					<thead>
 						<tr className="bg-white">
