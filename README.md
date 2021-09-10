@@ -1,6 +1,6 @@
 # Connect 4
 
-This is a Simple Sudoku app made in React JS.
+This is a Connect 4 game made in React JS.
 Instructions included.
 
 ## Frameworks & Libraries Used
