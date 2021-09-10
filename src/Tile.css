@@ -4,14 +4,15 @@
 	background-color: #fff;
 	border-radius: 50%;
 	display: inline-block;
+	cursor: pointer;
 }
 
-.blue {
+.Blue {
 	background: radial-gradient(circle at 2rem 2rem, dodgerblue, #333);
 	animation: fadeIn ease-out 0.3s;
 }
 
-.red {
+.Red {
 	background: radial-gradient(circle at 2rem 2rem, crimson, #333);
 	animation: fadeIn ease-out 0.3s;
 }
