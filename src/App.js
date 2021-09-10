@@ -13,6 +13,27 @@ export default function App() {
 		new bootstrap.Popover(document.querySelector('[data-bs-toggle="popover"]'), { container: 'body', html: true })
 	}, [])
 	const restart = () => window.location.reload()
+	const animateDrop = (row, column) => {
+		for(let i = 0; i < row; ++i) {
+			document.getElementById(i*7 + column).animate(
+				[
+					{
+						opacity: 0,
+						background: turn === "Blue" ? "radial-gradient(circle at 2rem 2rem, dodgerblue, #333)" : "radial-gradient(circle at 2rem 2rem, crimson, #333)"
+					},
+					{
+						opacity: 1,
+						background: turn === "Blue" ? "radial-gradient(circle at 2rem 2rem, dodgerblue, #333)" : "radial-gradient(circle at 2rem 2rem, crimson, #333)"
+					}
+				],
+				{
+					duration: 100,
+					delay: i * 100
+				}
+			)
+		}
+		setTimeout(() => document.getElementById(row*7 + column).classList.add(turn), row*100)
+	}
 	const handleMouseEnter = (e) => {
 		const column = e.target.querySelector('input').value % 7
 		document.getElementById("arrow" + column).className = turn === "Blue" ? "bg-primary" : "bg-danger"
@@ -27,6 +48,9 @@ export default function App() {
 		let _board = [ ...board ]
 		if(position !== false) {
 			_board[position] = turn === "Blue" ? "Blue" : "Red"
+			const column = position % 7
+			const row = (position - column) / 7
+			animateDrop(row, column)
 			setBoard(_board)
 			const result = checkWin(position)
 			switch(result) {
@@ -115,7 +139,7 @@ export default function App() {
 							</h5>
 						</div>
 						<div className="modal-footer">
-							<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="button" className="btn btn-secondary" onClick={window.close}>Exit</button>
 							<button type="button" className="btn btn-primary" onClick={restart}>Restart</button>
 						</div>
 					</div>

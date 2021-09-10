@@ -3,7 +3,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: aliceblue;
+	background: radial-gradient(circle, #0f0c29 0%, #302b63 50%, #24243e 100%);
 }
 
 h1 {
