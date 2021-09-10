@@ -12,6 +12,14 @@ export default function App() {
 		setResultModal(new bootstrap.Modal(document.getElementById('resultModal'), { keyboard: false, backdrop: 'static' }))
 	}, [])
 	const restart = () => window.location.reload()
+	const handleMouseEnter = (e) => {
+		const column = e.target.querySelector('input').value % 7
+		document.getElementById("arrow" + column).className = turn === "Blue" ? "bg-primary" : "bg-danger"
+	}
+	const handleMouseLeave = (e) => {
+		const column = e.target.querySelector('input').value % 7
+		document.getElementById("arrow" + column).className = ""
+	}
 	const handleClick = (e) => {
 		const tile = e.target.querySelector('input').value
 		const position = getLowestPlace(tile)
@@ -106,10 +114,22 @@ export default function App() {
 			</div>
 			<div className="card shadow-lg text-center p-3">
 				<h1 className={turn === "Blue" ? "text-primary" : "text-danger"}>Connect 4</h1>
-				<table className="table bg-secondary table-bordered m-0">
-					<thead></thead>
+				<table className="table bg-secondary m-0">
+					<thead>
+						<tr className="bg-white">
+							<th id="arrow0"></th>
+							<th id="arrow1"></th>
+							<th id="arrow2"></th>
+							<th id="arrow3"></th>
+							<th id="arrow4"></th>
+							<th id="arrow5"></th>
+							<th id="arrow6"></th>
+						</tr>
+					</thead>
 					<tbody>
-						{ Array.from({length: 6}, (v, i) => <Row key={i} board={board} row={i} handleClick={handleClick} />) }
+						{ Array.from({length: 6}, (v, i) => 
+							<Row key={i} board={board} row={i} handleClick={handleClick} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />)
+						}
 					</tbody>
 				</table>
 			</div>

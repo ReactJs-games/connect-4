@@ -9,3 +9,8 @@ main {
 h1 {
 	text-shadow: 2px 1px 0px #fff, 5px 4px 0px rgba(0,0,0,0.2);
 }
+
+th {
+	clip-path: polygon(20% 20%, 80% 20%, 50% 80%);
+	height: 2rem;
+}
