@@ -3,6 +3,9 @@
 This is a Connect 4 game made in React JS.
 Instructions included.
 
+## Deployment
+[Connect 4](https://athi223.github.io/react_connect_4/)
+
 ## Frameworks & Libraries Used
 
 <ol>
@@ -13,6 +16,13 @@ Instructions included.
 ## Screenshot
 
 ![Connect 4](https://i.ibb.co/8X8vznc/connect4.png)
+
+
+## ToDo
+<ul>
+	<li>Online Multiplayer</li>
+	<li>CLI implementation using C/C++ (Possibly Multithreaded)</li>
+</ul>
 
 ## Available Scripts
 
