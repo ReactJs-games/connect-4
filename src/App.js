@@ -158,24 +158,26 @@ export default function App() {
 						</ul>"
 					>Instructions</button>
 				</div>
-				<table className="table bg-secondary m-0">
-					<thead>
-						<tr className="bg-white">
-							<th id="arrow0"></th>
-							<th id="arrow1"></th>
-							<th id="arrow2"></th>
-							<th id="arrow3"></th>
-							<th id="arrow4"></th>
-							<th id="arrow5"></th>
-							<th id="arrow6"></th>
-						</tr>
-					</thead>
-					<tbody>
-						{ Array.from({length: 6}, (v, i) => 
-							<Row key={i} board={board} row={i} handleClick={handleClick} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />)
-						}
-					</tbody>
-				</table>
+				<div class="table-responsive">
+					<table className="table bg-secondary m-0">
+						<thead>
+							<tr className="bg-white">
+								<th id="arrow0"></th>
+								<th id="arrow1"></th>
+								<th id="arrow2"></th>
+								<th id="arrow3"></th>
+								<th id="arrow4"></th>
+								<th id="arrow5"></th>
+								<th id="arrow6"></th>
+							</tr>
+						</thead>
+						<tbody>
+							{ Array.from({length: 6}, (v, i) => 
+								<Row key={i} board={board} row={i} handleClick={handleClick} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />)
+							}
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</main>
 	)
