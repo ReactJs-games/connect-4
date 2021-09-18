@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/react_connect_4/static/css/main.df0cb53f.chunk.css",
-    "main.js": "/react_connect_4/static/js/main.d57d6308.chunk.js",
-    "main.js.map": "/react_connect_4/static/js/main.d57d6308.chunk.js.map",
-    "runtime-main.js": "/react_connect_4/static/js/runtime-main.f48852b6.js",
-    "runtime-main.js.map": "/react_connect_4/static/js/runtime-main.f48852b6.js.map",
-    "static/css/2.f2512455.chunk.css": "/react_connect_4/static/css/2.f2512455.chunk.css",
-    "static/js/2.e9b8d9ab.chunk.js": "/react_connect_4/static/js/2.e9b8d9ab.chunk.js",
-    "static/js/2.e9b8d9ab.chunk.js.map": "/react_connect_4/static/js/2.e9b8d9ab.chunk.js.map",
-    "static/js/3.39f5bae6.chunk.js": "/react_connect_4/static/js/3.39f5bae6.chunk.js",
-    "static/js/3.39f5bae6.chunk.js.map": "/react_connect_4/static/js/3.39f5bae6.chunk.js.map",
-    "index.html": "/react_connect_4/index.html",
-    "static/css/2.f2512455.chunk.css.map": "/react_connect_4/static/css/2.f2512455.chunk.css.map",
-    "static/css/main.df0cb53f.chunk.css.map": "/react_connect_4/static/css/main.df0cb53f.chunk.css.map",
-    "static/js/2.e9b8d9ab.chunk.js.LICENSE.txt": "/react_connect_4/static/js/2.e9b8d9ab.chunk.js.LICENSE.txt"
+    "main.css": "/connect-4_react/static/css/main.54e2b7de.chunk.css",
+    "main.js": "/connect-4_react/static/js/main.f0596d62.chunk.js",
+    "main.js.map": "/connect-4_react/static/js/main.f0596d62.chunk.js.map",
+    "runtime-main.js": "/connect-4_react/static/js/runtime-main.9c5ecc12.js",
+    "runtime-main.js.map": "/connect-4_react/static/js/runtime-main.9c5ecc12.js.map",
+    "static/css/2.f2512455.chunk.css": "/connect-4_react/static/css/2.f2512455.chunk.css",
+    "static/js/2.668d7f16.chunk.js": "/connect-4_react/static/js/2.668d7f16.chunk.js",
+    "static/js/2.668d7f16.chunk.js.map": "/connect-4_react/static/js/2.668d7f16.chunk.js.map",
+    "static/js/3.39f5bae6.chunk.js": "/connect-4_react/static/js/3.39f5bae6.chunk.js",
+    "static/js/3.39f5bae6.chunk.js.map": "/connect-4_react/static/js/3.39f5bae6.chunk.js.map",
+    "index.html": "/connect-4_react/index.html",
+    "static/css/2.f2512455.chunk.css.map": "/connect-4_react/static/css/2.f2512455.chunk.css.map",
+    "static/css/main.54e2b7de.chunk.css.map": "/connect-4_react/static/css/main.54e2b7de.chunk.css.map",
+    "static/js/2.668d7f16.chunk.js.LICENSE.txt": "/connect-4_react/static/js/2.668d7f16.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f48852b6.js",
+    "static/js/runtime-main.9c5ecc12.js",
     "static/css/2.f2512455.chunk.css",
-    "static/js/2.e9b8d9ab.chunk.js",
-    "static/css/main.df0cb53f.chunk.css",
-    "static/js/main.d57d6308.chunk.js"
+    "static/js/2.668d7f16.chunk.js",
+    "static/css/main.54e2b7de.chunk.css",
+    "static/js/main.f0596d62.chunk.js"
   ]
 }
