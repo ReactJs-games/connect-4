@@ -4,7 +4,7 @@ This is a Connect 4 game made in React JS.
 Instructions included.
 
 ## Deployment
-[Connect 4](https://athi223.github.io/react_connect_4/)
+[Connect 4](https://athi223.github.io/connect-4_react/)
 
 ## Frameworks & Libraries Used
 
