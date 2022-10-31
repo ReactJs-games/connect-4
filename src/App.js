@@ -179,11 +179,11 @@ export default function App() {
 						data-bs-toggle="popover"
 						data-bs-placement="bottom"
 						data-bs-content="<ul>
-							<li>First, decide who goes first and what color each player will have.</li>
-							<li>Players must alternate turns, and only one disc can be dropped in each turn.</li>
-							<li>On your turn, drop one of your colored discs from the top into any of the seven slots.</li>
-							<li>The game ends when there are 4 of the same colored discs in a row (either vertically, horizontally, or diagonally) or a stalemate.</li>
-							<li>The starter of the previous game goes second on the next game.</li>
+							<li>Firstly, decide who goes <i>first</i> and what <b>color</b> each player will have.</li>
+							<li>Players must take <i>alternate turns</i>, and only <b>one disc</b> can be dropped in <b>each turn</b>.</li>
+							<li>On your turn, drop one of your colored discs from the top <i>into any of the seven slots</i>.</li>
+							<li>The game ends when there are <b>4</b> of the <b>same colored</b> discs in a <i>row</i> (either <b>vertically</b>, <b>horizontally</b>, or <b>diagonally</b>) or a <b>stalemate</b>.</li>
+							<li>The <i>starter</i> of the <i>previous</i> game goes <i>second</i> on the <i>next</i> game.</li>
 						</ul>">
 						Instructions
 					</button>
